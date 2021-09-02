@@ -1,0 +1,20 @@
+ALGORITHM algorithm_name
+VAR
+   i, wordnumb, vowelnumb: INTEGER;
+   sent: STRING;
+BEGIN
+    wordnumb:=0;
+    vowelnumb:=0;
+    write ("write a sentence");
+    read (sent);
+    FOR i FROM 0 TO sent.length-1 DO
+        IF sent[i]="." OR sent[i]=" " DO 
+            wordnumb:=wordnumb+1;
+        ELSE IF sent[i].toLowerCase IN ["a", "i","e","o","y","u"] DO
+            vowelnumb:=vowelnumb+1;
+        END_IF
+    END_FOR
+    write ("the number of character",sent.length);
+    write ("the number of word",wordnumb);
+    write ("the number of vowel", vowelnumb);    
+END
